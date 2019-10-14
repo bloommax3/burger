@@ -1,13 +1,38 @@
 <div class="container">
     <div class="row">
-
+        <h1>Eat Dat Borger</h1>
     </div>
     <div class="row">
+        
         <div class="col">
-
+            {{#each data}}
+            {{#unless devoured}}
+            <div class="row">
+                <div class="col">
+                    <P>{{this.id}}. {{this.name}}</p>
+                </div> 
+                <div class="col">
+                    <p><button type="submit" id="{{this.id}}" class="devour-button">Devour Me!</button></P>
+                </div>
+            </div>
+            {{/unless}}
+            {{/each}}
         </div>
         <div class="col">
-
+            {{#each data}}
+            {{#if devoured}}
+            <div>
+                <P>{{this.id}}. {{this.name}}</P>
+            </div>
+            {{/if}}
+            {{/each}}
         </div>
+    </div>
+    <div class="row">
+        <form class="create-form">
+            <p>What type of burger would you like to add</p>
+            <p><input type="text" id="burger-name"></p>
+            <p><input type="submit"></p>
+        </form>
     </div>
 </div>
