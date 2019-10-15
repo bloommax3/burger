@@ -23,7 +23,7 @@ router.put("/api/burger/id/:id", function(req, res){
 
 router.post("/api/burger", function(req, res){
     console.log(req.body.name.toString())
-    burger.newBurger(req.body.name.toString(), function(data){
+    burger.newBurger(req.body.name, function(data){
         res.json(data)
     })
 })

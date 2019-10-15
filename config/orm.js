@@ -51,15 +51,11 @@ var orm = {
         })
     },
     //Create function
-    create: function(table, cols, vals, cb) {
+    create: function(table, condition, cb) {
         var queryString = "INSERT INTO " + table;
     
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += objToSql(vals);
-        queryString += ") ";
+        queryString += " SET ";
+        queryString += objToSql(condition)
     
         console.log(queryString);
     
