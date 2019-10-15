@@ -5,6 +5,7 @@
     <div class="row">
         
         <div class="col">
+            <h2>Uneaten Burgers:</h2>
             {{#each data}}
             {{#unless devoured}}
             <div class="row">
@@ -19,6 +20,7 @@
             {{/each}}
         </div>
         <div class="col">
+            <h2>Eaten Burgers:</h2>
             {{#each data}}
             {{#if devoured}}
             <div>
